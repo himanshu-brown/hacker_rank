@@ -1,0 +1,59 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+   
+    public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+
+        int i=0,j=0,k=0,l=0,m=0,sum=0,max=-1000;
+        int[][] arr = new int[6][6];
+
+        for(i=0;i<6;i++)
+        {
+            for(j=0;j<6;j++)
+            {
+                arr[i][j]=scanner.nextInt();
+            }
+        }
+        for(i=0;i<4;i++)
+        {
+            for(j=0;j<4;j++)
+            {
+                l=i;
+                m=j;
+                while(k<3)
+                {
+                    sum=sum+arr[l][m];
+                    m++;
+                    k++;
+                }
+                l++;
+                m=m-2;;
+                sum=sum+arr[l][m];
+                l++;
+                m--;
+                k=0;
+                while(k<3)
+                {
+                    sum=sum+arr[l][m];
+                    m++;
+                    k++;
+                }
+                if(max<sum)
+                max=sum;
+                k=0;
+                sum=0;
+            }
+        }
+        System.out.print(max);
+    }
+}
