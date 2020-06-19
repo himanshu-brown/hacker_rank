@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int i=0,j=0,flag=0;
+        int a[] = new int[n];
+       for(i=0;i<n;i++)
+       a[i]=scan.nextInt();
+       
+       while(j<n)
+       {
+            if(a[j]==1)
+            flag=1;
+            else{
+                for(i=2; i<=a[j]/i; i++){
+            if(a[j]%i==0) flag=1;
+            }
+        }
+
+            if(flag==1) System.out.println("Not prime");
+            else System.out.println("Prime");
+            flag=0;
+            j++;
+       }
+
+    }
+}
