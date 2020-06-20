@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int daya = scan.nextInt();
+        int montha = scan.nextInt();
+        int yeara = scan.nextInt();
+        int daye = scan.nextInt();
+        int monthe = scan.nextInt();
+        int yeare = scan.nextInt();
+        int fine = 0;
+        if((daya<=daye && montha<=monthe && yeara<=yeare) || (daya>=daye && montha>=monthe && yeara<yeare))
+        System.out.println(fine);
+        else if(daya>daye && montha==monthe && yeara==yeare)
+                {
+                    fine = 15 * (daya-daye);
+                    System.out.println(fine);
+                }
+                else if(montha>monthe && yeara==yeare)
+                        {
+                           fine = 500 * (montha-monthe); 
+                           System.out.println(fine);
+                        }
+                        else
+                        {
+                            fine = 10000;
+                            System.out.println(fine);
+                        }
+    }
+}
