@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int array[100000],n,r,t,i,j,k;
+    int array[100000],n,r,t,i,j=0,k;
     scanf("%d",&n);
     scanf("%d",&r);
     if(r>n)
@@ -10,7 +10,7 @@ int main()
     {
         scanf("%d",&array[i]);
     }
-    for(j=0;j<r%n;j++)
+    while(j<r%n)
     {
         t=array[0];
         for(k=1;k<n;k++)
@@ -18,6 +18,7 @@ int main()
             array[k-1]=array[k];
         }
         array[n-1]=t;
+        j++;
     }
     for(i=0;i<n;i++)
     {
