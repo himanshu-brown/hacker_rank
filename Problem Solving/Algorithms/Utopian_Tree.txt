@@ -22,7 +22,7 @@ int utopianTree(int n) {
             height++;
             else
             height*=2;
-        }
+        k
         return height;
     }
 
